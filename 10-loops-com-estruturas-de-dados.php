@@ -48,6 +48,19 @@ for($i = 0; $i < $linhas; $i++): // acessa cada linha
     endfor; // fim do acesso a cada linha
 endfor; // fim do acesso a cada linha
 ?>
+
+    <hr>
+
+    <h2>Usando loop <code>foreach</code> para arrays</h2>
+
+<?php 
+$alunos = ["Thiago", "Adela", "Renan", "Pérola"];
+foreach($alunos as $aluno):
+?>
+    <p><?= $aluno ?></p>
+<?php 
+endforeach
+?>
 </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
