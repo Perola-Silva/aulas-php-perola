@@ -9,7 +9,7 @@
 
     <style>
         body{
-            background-color: #000;
+            background-color: #130000;
             color: aliceblue;
         }
     </style>
@@ -98,6 +98,20 @@ foreach($curso as $chave => $valor):
     <p><?= $valor ?></p>
 
 <?php 
+endforeach;
+?>
+
+    <hr>
+
+    <h2>Usando <code>foreach</code> em uma matriz</h2>
+
+<?php 
+foreach($planoDeEstudos as $categoria): // cada linha (categoria)
+    foreach ($categoria as $assunto): // cada coluna (assunto/curso)
+?>
+    <p><?= $assunto ?></p>
+<?php 
+    endforeach;
 endforeach;
 ?>
 </div>
