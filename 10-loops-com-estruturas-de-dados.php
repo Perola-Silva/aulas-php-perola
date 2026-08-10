@@ -6,6 +6,13 @@
     <title>Document</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <style>
+        body{
+            background-color: #000;
+            color: aliceblue;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -60,6 +67,38 @@ foreach($alunos as $aluno):
     <p><?= $aluno ?></p>
 <?php 
 endforeach
+?>
+
+    <hr>
+
+    <h2>usando <code>foreach</code> para um array associativo</h2>
+
+<?php 
+$curso = [
+    "titulo" => "Gastronomia",
+    "carga_horaria" => 200,
+    "descricao" => "Aprender o básico sobre a área"
+];
+
+// Extraindo chave com valor
+foreach($curso as $chave => $valor):
+?>
+
+    <p><b><?= $chave ?></b>: <?= $valor ?></p>
+
+<?php 
+endforeach;
+?>
+
+<?php
+// Extraindo somento o valor
+foreach($curso as $chave => $valor):
+?>
+
+    <p><?= $valor ?></p>
+
+<?php 
+endforeach;
 ?>
 </div>
 
