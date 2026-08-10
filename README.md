@@ -1,2 +1,24 @@
-# aulas-php-perola
-aulas-php-perola
+# Atividades para estudo de PHP
+
+Neste projeto, estamos estudando a **linguagem PHP**.
+
+## Recursos estudados 
+
+- Sintaxe geral
+- Variáveis e constantes
+
+```php
+$aluno = "Fulano";
+const ESCOLA = "Senac";
+```
+
+- Arrays: `$alunos = ["a", "b"];`
+- Objetos genéricos
+
+## Recursos para estudar
+
+1. Estruturas de Controle Condicional
+2. Loops
+3. Funções nativas
+4. Funções personalizadas
+5. Inclusão de recursos externos
