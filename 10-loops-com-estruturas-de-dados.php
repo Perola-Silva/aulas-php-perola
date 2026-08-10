@@ -9,7 +9,7 @@
 
     <style>
         body{
-            background-color: #130000;
+            background-color: #080000;
             color: aliceblue;
         }
     </style>
@@ -112,6 +112,32 @@ foreach($planoDeEstudos as $categoria): // cada linha (categoria)
     <p><?= $assunto ?></p>
 <?php 
     endforeach;
+endforeach;
+?>
+
+    <hr>
+
+    <h2>Usando <code>foreach</code> em uma matriz associativa</h2>
+
+<?php 
+$clientes = [
+    [
+        "nome" => "Juliene",
+        "email" => "ju@senac.com.br"
+    ],
+    [
+        "nome" => "Luiz",
+        "email" => "luiz@senac.com.br"
+    ]
+];
+
+foreach($clientes as $cliente):
+?>
+
+    <p><b class= "bg-danger bg-gradient rounded">Nome:</b> <?= $cliente["nome"] ?></p>
+    <p><b class= "bg-danger bg-gradient rounded">E-mail:</b> <?= $cliente["email"] ?></p>
+
+<?php 
 endforeach;
 ?>
 </div>
