@@ -12,7 +12,7 @@
         body {
             font-family: cursive;
             background-color: #0c0c0c;
-            color: aliceblue;
+            color: #ebdddd;
         }
 
         .table-custom-striped tbody tr:nth-child(even) td {
@@ -61,7 +61,7 @@
     ];
     ?>
 
-    <table class="table table-bordered border-light table-custom-striped">
+    <table class="table table-bordered border-light-subtle table-custom-striped">
 
         <tr class="table-dark">
             <th>ID</th>
