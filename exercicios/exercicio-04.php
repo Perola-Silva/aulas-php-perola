@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container border border-light-subtle rounded-3 p-3">
     <h1>Exercício 04: estruturas de repetição (loops) e estruturas de dados</h1>
     <hr>
 
