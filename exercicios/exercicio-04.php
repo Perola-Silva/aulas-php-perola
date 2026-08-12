@@ -15,8 +15,8 @@
             color: #ebdddd;
         }
 
-        .table-custom-striped tbody tr:nth-child(even) td {
-            background-color: #fcdada; 
+        .table-custom-striped tr:nth-child(even) td {
+            background-color: #ffe0e0; 
             color: #000000;             
         }
     </style>
