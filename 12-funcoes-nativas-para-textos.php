@@ -42,7 +42,50 @@
     <p><b>Frase com substituição de plavra:</b> <?= $fraseComSubstituicaoDePalavra ?></p>
     <p><b>Frase censurada:</b> <?= $fraseCensurada ?></p>
 
+    <h2><code>strip_tags()</code></h2>
+    <?php 
+    $codigoHTML = "<h3>HTML5 - <a href='http://sp.senac.br'>Senac</a></h3>";
+    $textoSemTags = strip_tags($codigoHTML);
+    ?>
 
+        <div>
+            <?= $codigoHTML ?>
+            <?= $textoSemTags ?>
+        </div>
+
+        <h2><code>trim()</code></h2>
+        <?php 
+        $textoComEspacosAdicionais = "  Curso de PHP   ";
+        $textoSemEspacos = trim($textoComEspacosAdicionais);
+
+        $textoComQuebras = "\n\n Texto qualquer e etc e tal"; // API
+        $textoSemQuebras = trim($textoComQuebras);
+        ?>
+
+        <pre><?php var_dump($textoComEspacosAdicionais) ?></pre>
+        <pre><?php var_dump($textoSemEspacos) ?></pre>
+        <br><br>
+        <pre><?php var_dump($textoComQuebras) ?></pre>
+        <pre><?php var_dump($textoSemQuebras) ?></pre>
+
+        <h2><code>nl2br()</code></h2> 
+        <!-- New Line To Break -->
+        <?php 
+        $textoContendoQuebras = "A vida é feita de escolhas \n e a cada decisão, uma nova jornada começa. \n Às vezes, o caminho parece claro, \n mas em outras, a névoa da dúvida nos envolve. \n Mesmo assim, é importante seguir em frente. \n A coragem está em continuar, \n mesmo quando as respostas não são evidentes. \n Aprendemos com os erros e acertos, \n e cada experiência nos molda para o que está por vir. \n O segredo é nunca parar de caminhar.";
+        ?>
+
+        <p><?= $textoContendoQuebras ?></p>
+        <p><?= nl2br($textoContendoQuebras) ?></p>
+        <!-- a função pega as "quebras" e transforma em <br> para o HTML -->
+
+        <h2><code>explode()</code></h2>
+        <?php 
+        $linguagens = "HTML, CSS, JavaScript, PHP, SQL, Python, C#, Java"; 
+        $arrayLinguagens = explode(", ", $linguagens);
+        ?>
+
+        <pre><?php var_dump($linguagens) ?></pre>
+        <pre><?php var_dump($arrayLinguagens) ?></pre>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
