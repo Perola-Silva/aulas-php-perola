@@ -51,8 +51,34 @@
     <b>R$ <?= number_format($preco, 2, ",", " ") ?></b>
     </p>
     <p>Número com ajuste de casas decimais:
-    <b><?php number_format($numeroComMuitasCasasDecimais, 3, ",", " ") ?></b>
+    <b><?= number_format($numeroComMuitasCasasDecimais, 3, ",", " ") ?></b>
     </p>
+
+    <hr>
+
+    <h2>Data e hora</h2>
+    <h3><code>date()</code>, <code>date_default_timezone_set()</code>, <code>strtotime()</code></h3>
+
+    <?php 
+    date_default_timezone_set("America/Sao_Paulo");
+    $data = date("d/m/Y");
+    $hora = date("H:i:s");
+    $dataHora = date("d/m/Y H:i");
+    ?>
+
+    <p>Data: <?= $data ?></p>
+    <p>Data: <?= $hora ?></p>
+    <p>Data e hora: <?= $dataHora ?></p>
+
+    <?php 
+    $dataFormatoBD = "2020-09-11";
+
+    // Usamos o strtorime() para converter primeiro a data em um timestamp (data em formato numerico). Em seguida, o date aplica o formato desejado.
+    $dataFormatada = date("d/m/Y", strtotime($dataFormatoBD));
+    ?>
+
+    <p>Data (em formato de sistema/banco): <?= $dataFormatoBD ?></p>
+    <p>Data (convertida e formatada): <?= $dataFormatada ?></p>
 
     </div>
 
