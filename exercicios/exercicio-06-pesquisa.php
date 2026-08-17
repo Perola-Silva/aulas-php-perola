@@ -100,7 +100,6 @@
 
         <h3>getdate( ) no momento:</h3>
         <pre><?= print_r($dataAgora); ?></pre>
-
         <hr>
 
         <h3>getdate( ) para valores especificos:</h3>

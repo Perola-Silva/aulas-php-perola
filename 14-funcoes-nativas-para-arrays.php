@@ -59,6 +59,21 @@
 
         $total = array_sum($carrinhoDeCompras); 
         ?>
+
+        <p>Total: <?= $total ?></p>
+
+        <h2><code>array_unique()</code></h2>
+        <p>Gera umm novo array removendo elementos duplicados/repetidos um um array.</p>
+
+        <?php 
+        $categorias = ["eletronicos", "livros", "roupas", "games", "eletronicos", "livros"];
+
+        $categoriasUnicas = array_unique($categorias); 
+        ?>
+
+        <pre><?php var_dump($categorias) ?></pre>
+        <pre><?php var_dump($categoriasUnicas) ?></pre>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
