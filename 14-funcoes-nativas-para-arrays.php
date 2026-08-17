@@ -74,6 +74,55 @@
         <pre><?php var_dump($categorias) ?></pre>
         <pre><?php var_dump($categoriasUnicas) ?></pre>
 
+        <hr>
+
+        <h2><code>array_merge()</code></h2>
+        <p>Junta dados de arrays diferentes.</p>
+
+        <?php 
+        $produtosFilialNorte = ["Mouse", "Teclado"];
+        $produtosFilialSul = ["Monitor", "Webcam", "Pendrive", "Teclado"];
+
+        // $produtos = array_merge($produtosFilialNorte, $produtosFilialSul);
+
+        $produtos = array_unique(array_merge($produtosFilialNorte, $produtosFilialSul));
+        ?>
+
+        <pre><?php var_dump($produtosFilialNorte, $produtosFilialSul) ?></pre>
+        <pre><?php var_dump($produtos) ?></pre>
+
+        <hr>
+
+        <h2><code>array_combine()</code></h2>
+
+        <p>Cria um novo array a partir uma lista de valores e uma lista de chaves.</p>
+
+        <?php 
+        // Lista de chaves
+        $games = ["Super_Mario", "Sonic", "Final_Fantasy"];
+
+        // Lista de valores
+        $precos = [9, 50, 129];
+
+        $catalogo = array_combine($games, $precos);
+        ?>
+
+        <pre><?php var_dump($games, $precos) ?></pre>
+        <pre><?php var_dump($catalogo) ?></pre>
+
+        <hr>
+
+        <h2><code>array_map()</code></h2>
+        <p>Percorre cada elemnto de um array, executa uma função (chamada de callback) e gera um novo array com os resultados.</p>
+
+        <?php 
+        $catatlogoComDesconto = array_map(function($preco){
+            return $preco - $preco * 0.1;
+        }, $catalogo);
+        ?>
+
+        <pre><?php var_dump($catatlogoComDesconto) ?></pre>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
