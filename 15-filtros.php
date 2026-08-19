@@ -64,13 +64,65 @@
 
         <?php 
         $nomeCompleto = "<img src= 'https://ladeira.vtexassets.com/arquivos/ids/3293882/PINGENTE-BONECO-PELUCIA-LABUBU-17CM-SORTIDO-UNIDADE---103---COLORIDO.jpg?v=639130871028700000'>";
-        
+
         $nomeCompletoSanitizado = filter_var(
             $nomeCompleto, FILTER_SANITIZE_FULL_SPECIAL_CHARS
         );
         ?>
 
         <p>Nome informado: <?= $nomeCompletoSanitizado ?></p>
+
+        <?php 
+        // Simulando um ataque de injeção de código JS (XSS - Cross Site Scripting)
+        $ataqueXSS = "<script>location = 'https://www.instagram.com/'</script>";
+        ?>
+
+        <p>Teste: <?= filter_var($ataqueXSS, FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?></p>
+
+        <h3><code>htmlspecialchars()</code></h3>
+
+        <?php 
+        $nomeCompletoCorrigido = htmlspecialchars($nomeCompleto);
+        $ataqueEvitado = htmlspecialchars($ataqueXSS);
+        ?>
+
+        <p>Nome completo corrigido: <?= $nomeCompletoCorrigido ?></p>
+        <p>Ataque evitado: <?= $ataqueEvitado ?></p>
+
+        <hr>
+
+        <h3><code>FILTER_SANITIZE_NUMBER_INT</code></h3>
+
+        <?php 
+        $idade = "Tenho 15 anos";
+        $idade = filter_var($idade, FILTER_SANITIZE_NUMBER_INT)
+        ?>
+
+        <p>Idade: <?= $idade ?></p>
+
+        <hr>
+
+        <h3><code>FILTER_SANITIZE_NUMBER_FLOAT</code></h3>
+
+        <?php 
+        $precoInicial = "R$ 1000.78";
+        $descontos = "R$500.30";
+
+        $precoInicial = filter_var(
+            $precoInicial, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION
+        );
+
+        
+        $descontos = filter_var(
+            $descontos, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION
+        );
+
+        $precoFinal = $precoInicial - $descontos;
+        ?>
+
+        <p>Preço inicial: <?= $precoInicial ?></p>
+        <p>Desconto: <?= $descontos ?></p>
+        <p>Preço final: <?= $precoFinal ?></p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
