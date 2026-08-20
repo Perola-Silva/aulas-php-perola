@@ -1,6 +1,6 @@
 </main>
 
-    <footer>
+    <footer class="container">
         <p>Site criado usando PHP</p>
     </footer>
 
