@@ -93,7 +93,7 @@ if( $_SERVER["REQUEST_METHOD"] === "POST" ){
                 <li> <?= $erro ?> </li>
             <?php endforeach ?>
         </ul>
-        <a href="17-formulario.html" class="btn btn-warning">Voltar para o formulário</a>
+        <a href="17-processamento.php" class="btn btn-warning">Voltar para o formulário</a>
     </div>
 <?php else: ?>
     <h2>Dados recebidos</h2>
@@ -116,7 +116,7 @@ if( $_SERVER["REQUEST_METHOD"] === "POST" ){
         <h2>Acesso inválido!</h2>
         <p>Você deve usar o formulário para enviar os dados.</p>
         <hr>
-        <a href="17-formulario.html" class="btn btn-primary">Ir para o formulário.</a>
+        <a href="17-processamento.php" class="btn btn-primary">Ir para o formulário.</a>
     </div>
 <?php  
 }
