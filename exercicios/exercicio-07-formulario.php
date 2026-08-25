@@ -23,7 +23,7 @@
             </div>
 
             <div class="mb-3">
-                <label class="form-label" for="Fabricante">Fabricante do produto:</label>
+                <label class="form-label" for="fabricante">Fabricante do produto:</label>
                 <select class="form-select" name="fabricante" id="fabricante">
                     <option value="samsung">Samsung</option>
                     <option value="singsong">Singsong</option>
